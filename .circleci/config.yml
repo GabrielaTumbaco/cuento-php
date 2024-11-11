@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.4-apache
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: docker build -t mfieldhouse/PHP:$CIRCLE_BRANCH .
+
+
